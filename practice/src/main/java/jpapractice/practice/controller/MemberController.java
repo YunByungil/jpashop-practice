@@ -27,7 +27,7 @@ public class MemberController {
     }
 
     @PostMapping("/members/new")
-    public String create(@Validated @ModelAttribute("form") MemberForm form, BindingResult bindingResult) {
+    public String create(@Validated @ModelAttribute MemberForm form, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             return "members/createMemberForm";
         }
